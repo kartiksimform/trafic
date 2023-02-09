@@ -113,3 +113,7 @@
     /* visibility: hidden !important; */
 
 }
+.reletiv-50{
+  position: relative;
+  left: 50%;
+}
