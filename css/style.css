@@ -54,6 +54,9 @@
   .red {
     background-color: red;
   }
+  .color-red {
+    color: red;
+  }
   
   .yellow {
     background-color: yellow;
@@ -62,6 +65,13 @@
   .green {
     background-color: green;
   }
+  .color-green {
+    color: green;
+  }
+  .transform-scal{
+    transform: scale(1.3);
+  }
+  
   
   form {
     display: flex;
@@ -94,7 +104,11 @@
   .light{
     /* visibility: hidden !important; */
 }
-.visiblity-hidden{
+
+.flex-colomn i{
+  color: green;
+}
+.visiblity-low{
  opacity: 0.12; 
     /* visibility: hidden !important; */
 

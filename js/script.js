@@ -2,11 +2,16 @@ let green=document.getElementsByClassName('green');
 let red=document.getElementsByClassName('red');
 let yellow=document.getElementsByClassName('yellow');
 let timer=document.getElementsByClassName('timer');
+let left=document.getElementsByClassName('left');
+let right=document.getElementsByClassName('right');
+let up=document.getElementsByClassName('up');
 
-// green[0].classList.add('visiblity-hidden');
-// green[1].classList.add('visiblity-hidden');
-// green[2].classList.add('visiblity-hidden');
-// green[3].classList.add('visiblity-hidden');
+
+// left[0].classList.add('visiblity-low');
+// green[0].classList.add('visiblity-low');
+// green[1].classList.add('visiblity-low');
+// green[2].classList.add('visiblity-low');
+// green[3].classList.add('visiblity-low');
 
 let i=0;
 // setInterval(start,500);
@@ -17,16 +22,16 @@ let i=0;
 //     console.log('-------------------');
 //     console.log('1st : ' + i);
     
-//     green[i].classList.remove('visiblity-hidden')
+//     green[i].classList.remove('visiblity-low')
 //     i=(i+1)%4;
 //     console.log('2st : ' + i);
-//     green[i].classList.add('visiblity-hidden')
+//     green[i].classList.add('visiblity-low')
 //     i=(i+1)%4;
 //     console.log('3st : ' + i);
-//     green[i].classList.add('visiblity-hidden')
+//     green[i].classList.add('visiblity-low')
 //     i=(i+1)%4;
 //     console.log('4st : ' + i);
-//     green[i].classList.add('visiblity-hidden')
+//     green[i].classList.add('visiblity-low')
 //     if(i!=0 && i!=1){
 //         console.log(' l');
 //         i=(i-2)%3;
@@ -51,8 +56,19 @@ for (let i=0;i<=3;i++){
     
     let time_one=Number (timer[i].innerHTML);
 
+
+
+    //currunt here 
     if(!(time_one!=0 && currunt !=i))
     {
+        timer[i].classList.add('color-green')
+        timer[i].classList.remove('color-red')
+
+
+        // left[i].classList.remove('visiblity-low');
+        up[i].classList.remove('visiblity-low');
+        right[i].classList.remove('visiblity-low');
+        
         
         timer[i].innerHTML=time_one+1;
         if (time_one==30){
@@ -63,46 +79,69 @@ for (let i=0;i<=3;i++){
             else{
                 currunt--
             }
-       }
-       else if(time_one<25){
-            green[i].classList.remove('visiblity-hidden');
-            yellow[i].classList.add('visiblity-hidden');
-            red[i].classList.add('visiblity-hidden');
+        }
+        else if(time_one<25){
+            green[i].classList.add('transform-scal');
+            red[i].classList.remove('transform-scal');
 
+            green[i].classList.remove('visiblity-low');
+            yellow[i].classList.add('visiblity-low');
+            red[i].classList.add('visiblity-low');
+            
         }
         
         else{
-            green[i].classList.add('visiblity-hidden');
-            yellow[i].classList.remove('visiblity-hidden');
-            red[i].classList.add('visiblity-hidden');
+            // green[i].classList.add('transform-scal');
 
+            red[i].classList.remove('transform-scal');
+            green[i].classList.remove('transform-scal');
+            
+            green[i].classList.add('visiblity-low');
+            yellow[i].classList.remove('visiblity-low');
+            red[i].classList.add('visiblity-low');
+            
             
         }
-
- 
-
+        
+        
+        
     }
     else{
-      
+
+        timer[i].classList.add('color-red');
+        timer[i].classList.remove('color-green');
+
+        up[i].classList.add('visiblity-low');
+        right[i].classList.add('visiblity-low');
+       
+
+        // console.log(i);
         timer[i].innerHTML=time_one-1;
         if(time_one>5){
-            green[i].classList.add('visiblity-hidden');
-            yellow[i].classList.add('visiblity-hidden');
-            red[i].classList.remove('visiblity-hidden');
+        red[i].classList.add('transform-scal');
+        green[i].classList.remove('transform-scal');
+
+            green[i].classList.add('visiblity-low');
+            yellow[i].classList.add('visiblity-low');
+            red[i].classList.remove('visiblity-low');
             
         }
         else if (time_one<=5 && time_one>0){
-            green[i].classList.add('visiblity-hidden');
-            yellow[i].classList.remove('visiblity-hidden');
-            red[i].classList.add('visiblity-hidden');
+            red[i].classList.remove('transform-scal');
+            green[i].classList.remove('transform-scal');
+
+            // green[i].classList.add('visiblity-low');
+            // yellow[i].classList.remove('visiblity-low');
+            // red[i].classList.add('visiblity-low');
 
             
         }
         else{
 
-            green[i].classList.remove('visiblity-hidden');
-            yellow[i].classList.add('visiblity-hidden');
-            red[i].classList.add('visiblity-hidden');
+
+            green[i].classList.remove('visiblity-low');
+            yellow[i].classList.add('visiblity-low');
+            red[i].classList.add('visiblity-low');
         }
    }
 }
